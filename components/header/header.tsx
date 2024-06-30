@@ -90,7 +90,7 @@ const Header = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center justify-center space-x-8 rounded-[12px] border-4 bg-black py-4 shadow-sm">
+            <div className="flex items-center justify-center space-x-8 rounded-[12px] border-2 bg-black py-4 shadow-sm">
               {socialLinks.map(({ href, icon }, index) => (
                 <Link
                   key={index}
