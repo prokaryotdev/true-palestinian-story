@@ -111,7 +111,7 @@ const Timeline = () => {
               </div>
 
               {/* Month Description */}
-               <p className="col-span-7 row-span-3 mb-10 ml-6 line-clamp-3 max-h-[90px] text-[1.1em] md:order-3 md:col-span-1 md:row-span-1 md:mx-0 md:line-clamp-4 md:max-h-[110px] md:text-[1.2em]">
+               <p className="col-span-7 row-span-3 mb-10 ml-6 line-clamp-3 max-h-[90px] text-[1em] md:order-3 md:col-span-1 md:row-span-1 md:mx-0 md:line-clamp-4 md:max-h-[110px] md:text-[1.2em]">
                 {item.desc}
               </p>
             </div>
