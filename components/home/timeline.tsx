@@ -11,7 +11,7 @@ const Timeline = () => {
           <div className="md grid grid-cols-8 md:grid-cols-[1fr_auto_1fr] md:gap-x-16">
             <div className="row-span-2 flex max-w-10 flex-col items-center md:order-2 md:row-span-1">
               {/* Event Milestone Indicator*/}
-              <div className="my-2 flex h-12 w-12 items-center justify-center rounded-full border-[5px] border-neutral-200 bg-neutral-950 shadow-lg">
+              <div className="my-2 flex h-12 w-12 items-center justify-center rounded-full border-[5px] border-neutral-200 bg-neutral-950 shadow-lg md:border-[4px]">
                 <Image
                   src={"/palestine.svg"}
                   alt={"palestine icon"}
