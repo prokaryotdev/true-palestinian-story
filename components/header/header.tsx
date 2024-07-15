@@ -1,10 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { AlignJustify, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import Logo from "@/public/logo.svg";
+
+const links = [
+  { href: "/current-affairs", label: "Current Affairs" },
+  { href: "/resources", label: "Resources" },
+];
 
 const socialLinks = [
   { href: "https://www.facebook.com", icon: "/facebook.svg" },
@@ -37,12 +42,11 @@ const Header = () => {
 
         {/* Desktop Links */}
         <div className="hidden space-x-4 md:flex">
-          <Link href="">
-            <Button className={buttonClass}>Current affairs</Button>
-          </Link>
-          <Link href="">
-            <Button className={buttonClass}>Resources</Button>
-          </Link>
+          {links.map((link, index) => (
+            <Link href="" key={index}>
+              <Button className={buttonClass}>{link.label}</Button>
+            </Link>
+          ))}
         </div>
 
         {/* Mobile Menu Icon */}
@@ -65,6 +69,7 @@ const Header = () => {
             className="h-[320px] w-[350px] rounded-[4px] bg-white p-6 shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Close Menu */}
             <div className="mb-8 flex justify-end">
               <X
                 className="cursor-pointer rounded-lg text-gray-800"
@@ -75,21 +80,18 @@ const Header = () => {
 
             {/* Mobile Links */}
             <div className="mb-10 space-y-3">
-              <Link
-                href=""
-                className="block rounded-[8px] border p-3 px-4 text-xl font-medium transition-colors hover:bg-gray-50"
-              >
-                Current Affairs
-              </Link>
-              <Link
-                href=""
-                className="block rounded-[8px] border p-3 px-4 text-xl font-medium transition-colors hover:bg-gray-50"
-              >
-                Resources
-              </Link>
+              {links.map((link, index) => (
+                <Link
+                  href=""
+                  key={index}
+                  className="block rounded-[8px] border p-3 px-4 text-xl font-medium transition-colors hover:bg-gray-50"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
 
-            {/* Social Links */}
+            {/* Mobile Social Links */}
             <div className="flex items-center justify-center space-x-8 rounded-[12px] border-2 bg-black py-4 shadow-sm">
               {socialLinks.map(({ href, icon }, index) => (
                 <Link
