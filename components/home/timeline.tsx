@@ -1,12 +1,12 @@
 import Image from "next/image";
 import clsx from "clsx";
-import events from "./events";
+import data from "./data";
 import { ChevronRight } from "lucide-react";
 
 const Timeline = () => {
   return (
     <div className="mx-auto mb-6 max-w-[1000px] md:mt-[150px] lg:mt-[160px]">
-      {events.map((event, index) => (
+      {data.map((event, index) => (
         <div key={index}>
           <div className="md grid grid-cols-8 md:grid-cols-[1fr_auto_1fr] md:gap-x-16">
             <div className="row-span-2 flex max-w-10 flex-col items-center md:order-2 md:row-span-1">
@@ -89,7 +89,7 @@ const Timeline = () => {
                     monthIndex === event.month.length - 1
                       ? "h-[180px]"
                       : "h-[120px]",
-                    index === events.length - 1 &&
+                    index === data.length - 1 &&
                       monthIndex === event.month.length - 1 &&
                       "hidden",
                   )}
