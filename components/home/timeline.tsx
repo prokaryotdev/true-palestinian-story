@@ -2,6 +2,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import data from "./data";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const Timeline = () => {
   return (
@@ -48,7 +49,8 @@ const Timeline = () => {
               />
             </div>
 
-            <div
+            <Link
+              href={"event/1"}
               className={clsx(
                 "col-span-7 mb-10 ml-6 flex max-h-[150px] cursor-pointer items-center transition-colors md:col-span-1 md:mx-0 md:max-w-[280px] md:items-start",
                 "hover:text-black/90",
@@ -70,7 +72,7 @@ const Timeline = () => {
                   )}
                 />
               </div>
-            </div>
+            </Link>
           </div>
 
           {/* Event Months and Descriptions */}
@@ -111,7 +113,7 @@ const Timeline = () => {
               </div>
 
               {/* Month Description */}
-               <p className="col-span-7 row-span-3 mb-10 ml-6 line-clamp-3 max-h-[75px] text-[1em] md:order-3 md:col-span-1 md:row-span-1 md:mx-0 md:max-h-[112px] md:text-[1.2em] md:line-clamp-4">
+              <p className="col-span-7 row-span-3 mb-10 ml-6 line-clamp-3 max-h-[75px] text-[1em] md:order-3 md:col-span-1 md:row-span-1 md:mx-0 md:line-clamp-4 md:max-h-[112px] md:text-[1.2em]">
                 {item.desc}
               </p>
             </div>
