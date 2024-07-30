@@ -1,58 +1,44 @@
 import Image from "next/image";
-import clsx from "clsx";
 import { ChevronLeft } from "lucide-react";
-
+import Link from "next/link";
 
 const EventHero = () => {
-
   const event = {
-    id: "1",
-    label: "The Great Arab Revolt",
     image: "/img1.png",
-    title: "1936",
-    desc: "Palestinian revolt against British colonial rule and mass Jewish immigration, demanding self-determination",
-    brief: "Palestinian revolt against British colonial rule and mass Jewish immigration, demanding self-determination.Palestinian revolt against British colonial rule and mass Jewish immigration, demanding self-determination."
+    year: "1936",
+    title:
+      "Palestinian revolt against British colonial rule and mass Jewish immigration, demanding self-determination",
+    desc: "Palestinian Arabs rebelled against British Mandate rule and Jewish immigration, seeking self-determination and an end to Jewish land purchases. British authorities imposed martial law to quell the unrest.",
   };
 
-
-
   return (
-    <div className="mx-auto mb-6 max-w-[1000px] md:mt-[10px] lg:mt-[10px] p-0">
-      <div className="md:grid md:grid-cols-[auto_1fr_1fr] mt-0 gap-x-4">
-        <div>
-          <ChevronLeft
-            className={clsx(
-              "ml-8 h-12 w-12 md:mt-0"
-            )}
-          />
-        </div>
-        <div className="mr-[10px] mt-[10px]">
-          <div className="mb-5 ml-6 line-clamp-4 text-2xl md:mx-0 md:line-clamp-5 font-extrabold uppercase">
-            {event.desc}
-          </div>
-          <div className="text-6xl font-bold">
+    <div className="relative mx-auto mb-6 lg:mt-4">
+      <div className="flex flex-col justify-between lg:flex-row lg:gap-x-8">
+        <div className="lg:mr-10 lg:grow">
+          <h2 className="mb-8 text-2xl font-extrabold uppercase">
             {event.title}
-          </div>
-          <div className="col-span-7 row-span-3 mb-10 ml-6 line-clamp-3 max-h-[75px] text-sm md:order-3 md:col-span-1 md:row-span-1 md:mx-0 md:max-h-[112px] md:text-[1.1em] md:line-clamp-4 mt-5">
-            {event.brief}
-          </div>
+          </h2>
+          <h1 className="mb-4 text-5xl font-bold">{event.year}</h1>
+          <p className="mb-10 ml-2">{event.desc}</p>
         </div>
-        <div
-          className={clsx(
-            "col-span-7 mb-5 ml-6 overflow-hidden md:col-span-1 md:mx-0"
-          )}
-        >
+        <div className="px-2 lg:w-[1100px] lg:px-0">
           <Image
             src={event.image}
-            alt={event.label}
-            width={377}
-            height={372}
+            alt={event.title}
+            width={200}
+            height={100}
+            className="w-full border-2 object-cover shadow-md"
           />
         </div>
       </div>
-
-
+      <Link
+        href="/"
+        className="absolute top-1 hidden lg:-left-20 lg:block xl:-left-28"
+      >
+        <ChevronLeft className="size-12 cursor-pointer font-extrabold" />
+      </Link>
     </div>
   );
 };
+
 export default EventHero;
