@@ -93,7 +93,7 @@ const EventSources = () => {
           {filteredData
             .filter((item) => item.type === "documentary")
             .map((documentary, index) => (
-              <Link className="mb-6 block" href="">
+              <Link className="mb-6 block" key={index} href="">
                 <div className="flex flex-col justify-between lg:flex-row">
                   <div className="w-full rounded-[16px] lg:w-[25%]">
                     <Image
